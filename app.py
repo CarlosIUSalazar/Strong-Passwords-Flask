@@ -25,6 +25,7 @@ def index():
             flash("Password not strong enough. Avoid consecutive characters and easily guessed words.")
             return render_template('form.html')
         else:
+            print(stats.strength())
             return render_template('success.html')
 
     return render_template('form.html')
