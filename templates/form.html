@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block header %}{% endblock %}
+{% block content %}
+
+{% if message %}
+<h3 class="text-center">{{ message }}</h3>
+{% endif %}
+
+<form class="d-flex flex-row justify-content-around" id="registration" method="post">
+  <div class="d-flex flex-column align-items-center">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" required>
+  </div>
+  <div class="d-flex flex-column align-items-center">
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" required  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+  </div>
+  <button class="btn btn-primary align-self-center" type="submit">Register</button>
+</form>
+
+{% endblock %}
